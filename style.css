@@ -1,0 +1,30 @@
+body {
+    background-color: #f8f9fa;
+}
+
+/* MAIN CARD BODY */
+/* .card-body {
+
+} */
+
+/* LENGTH OF PASSWORD */
+.object-width {
+    width: 20%;
+    min-width: ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-range {
+    width: 10%;
+}
+
+input[type="range"] {
+    appearance: none;
+    width: 60%;
+    height: 8px;
+    background: var(--writer-blue-3);
+    padding: 0px;
+    border-radius: 3px;
+}
