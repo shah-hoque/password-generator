@@ -89,26 +89,60 @@ var specialCharacters = [
   ];
 
 
+// FORM CLIENT-SIDE DATA ENTRY VALIDATION -----------------------------------
 
 const form = document.getElementById('form')
+
+// VAR'S RELATED TO "PASSWORD LENGTH"
 const numLenGiven = document.getElementById('num-len-given')
-const errorElement = document.getElementById('error_msg_1')
+const errorElement1 = document.getElementById('error_msg_1')
+
+// VAR'S RELATED TO "SWITCHES"
+const allSwitches = document.querySelectorAll('.form-group .form-check-input');
+const errorElement2 = document.getElementById('error_msg_2');
+let atLeastOneChecked = false;
+
 
 form.addEventListener('submit', (e) => {
-  let messages = []
+  // ERROR CHECKS FOR "PASSWORD LENGTH"
+  let logError1 = []
   if (numLenGiven.value === '' || numLenGiven.value == null) {
-    messages.push('Please enter a number')
+    logError1.push('Please enter a number')
 
   }
   if (numLenGiven.value >= 1) {
     if (numLenGiven.value < 10 || numLenGiven.value > 64) {
-      messages.push('Please enter a number between 10-64')
+      logError1.push('Please enter a number between 10-64')
     }
 }
 
-  if (messages.length > 0) {
+  if (logError1.length > 0) {
     e.preventDefault()
-    errorElement.innerText = messages.join(', ')
+    errorElement1.innerText = logError1.join(', ')
+  } else {
+    errorElement1.innerText = '';
+  }
+
+  // ERROR CHECKS FOR "SWITCHES"
+  let logError2 = []
+
+  allSwitches.forEach(input => {
+  if (input.checked) {
+      atLeastOneChecked = true;
+    }
+  });
+
+  if (!atLeastOneChecked) {
+      logError2.push('Please select at least one option')
+  }
+
+  if (logError2.length > 0) {
+      e.preventDefault();
+      errorElement2.innerText = logError2.join(', ');
+  } else {
+    atLeastOneChecked = false;
+    errorElement2.innerText = '';
   }
 
 })
+// FORM CLIENT-SIDE DATA ENTRY VALIDATION (end) -----------------------------------
