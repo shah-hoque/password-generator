@@ -20,11 +20,3 @@ body {
     width: 10%;
 }
 
-input[type="range"] {
-    appearance: none;
-    width: 60%;
-    height: 8px;
-    background: var(--writer-blue-3);
-    padding: 0px;
-    border-radius: 3px;
-}

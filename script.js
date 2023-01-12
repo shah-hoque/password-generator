@@ -87,32 +87,67 @@ var specialCharacters = [
     'Y',
     'Z'
   ];
-  
-  // Function to prompt user for password options
-  function getPasswordOptions() {
-  
-  }
-  
-  // Function for getting a random element from an array
-  function getRandom(arr) {
-  
-  }
-  
-  // Function to generate password with user input
-  function generatePassword() {
-  
-  }
-  
-  // Get references to the #generate element
-  var generateBtn = document.querySelector('#generate');
-  
-  // Write password to the #password input
-  function writePassword() {
-    var password = generatePassword();
-    var passwordText = document.querySelector('#password');
-  
-    passwordText.value = password;
-  }
-  
-  // Add event listener to generate button
-  generateBtn.addEventListener('click', writePassword);
+
+
+
+// const form = document.getElementById('form')
+// const username = document.getElementById('username')
+
+
+// form.addEventListener('submit', (e) => {
+//   e.preventDefault();
+
+//   checkInputs();
+// })
+
+// function checkInputs() {
+//   // get the values from the inputs
+//   const usernameVal = username.value.trim()
+
+//   if (usernameVal === '') {
+//     // show error
+//     // add error class
+//     setError(username,'Input cant be blank bro');
+
+//   } else {
+//     // add success class
+//     setSuccess(username);
+//   }
+
+// }
+
+
+// function setError(input, message) {
+//   const numRequestBox = input.parentElement; // .num-request
+//   const small = numRequestBox.querySelector('small');
+
+//   // add error message inside small
+//   small.innerText = message;
+
+//   // add error class
+//   numRequestBox.className = 'num-request error'
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

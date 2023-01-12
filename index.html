@@ -13,7 +13,7 @@
 
     <!-- LOCAL LINKS -->
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
 
 
 </head>
@@ -27,41 +27,44 @@
                     <div class="card mt-5">
                         <div class="card-body pe-3">
                             <h1 class="display-6 fw-semibold pt-6">Password generator</h1>
-                            <div>
-                                <!-- <h6 class="display-7">Choose a password length from 10-64</h6> -->
-
-                                <div class="mb-3 mt-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Password length</label>
-                                    <input class="form-control" id="exampleFormControlInput1" placeholder="Between 10-64 characters (e.g 15)">
-                                  </div>
 
 
-                                  <p class="display-7">Include the following (randomised)</p>
+                            <form id="form" action="/" method="GET"> 
 
-                                  <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">Capital letters</label>
-                                  </div>
+                                <div class="mb-1 mt-3">
+                                    <p>Password length</p>
+                                    <input class="form-control" type="number" placeholder="Enter a number between 10-64" name="num-len-given">
+                                    <div class="text-danger pb-3" id="error_msg_1"></div>
 
+                                    <p>Include the following (randomised)</p>
 
+                                    <div class="form-group">
+                                      <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="capital-letters" name="options[]" >
+                                        <label class="form-check-label" for="capital-letters">Capital letters</label>
+                                      </div>
 
+                                      <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="numbers" name="options[]">
+                                        <label class="form-check-label" for="numbers">Numbers</label>
+                                      </div>
 
+                                      <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="special-char" name="options[]">
+                                        <label class="form-check-label" for="special-char">Special characters ($@%&*, etc)</label>
+                                      </div>
+                                    </div>
+                                    <div class="text-danger pb-3" id="error_msg_2"></div>
 
+                                    <div class="pb-2">
+                                      <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
 
-                                
-
-                            </div>
-
+                            </form>
 
                         </div>
                       </div>
-
                 </div>
-
-                
-
-
-
                 
             </div>
             
