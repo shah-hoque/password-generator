@@ -90,64 +90,25 @@ var specialCharacters = [
 
 
 
-// const form = document.getElementById('form')
-// const username = document.getElementById('username')
+const form = document.getElementById('form')
+const numLenGiven = document.getElementById('num-len-given')
+const errorElement = document.getElementById('error_msg_1')
 
+form.addEventListener('submit', (e) => {
+  let messages = []
+  if (numLenGiven.value === '' || numLenGiven.value == null) {
+    messages.push('Please enter a number')
 
-// form.addEventListener('submit', (e) => {
-//   e.preventDefault();
+  }
+  if (numLenGiven.value >= 1) {
+    if (numLenGiven.value < 10 || numLenGiven.value > 64) {
+      messages.push('Please enter a number between 10-64')
+    }
+}
 
-//   checkInputs();
-// })
+  if (messages.length > 0) {
+    e.preventDefault()
+    errorElement.innerText = messages.join(', ')
+  }
 
-// function checkInputs() {
-//   // get the values from the inputs
-//   const usernameVal = username.value.trim()
-
-//   if (usernameVal === '') {
-//     // show error
-//     // add error class
-//     setError(username,'Input cant be blank bro');
-
-//   } else {
-//     // add success class
-//     setSuccess(username);
-//   }
-
-// }
-
-
-// function setError(input, message) {
-//   const numRequestBox = input.parentElement; // .num-request
-//   const small = numRequestBox.querySelector('small');
-
-//   // add error message inside small
-//   small.innerText = message;
-
-//   // add error class
-//   numRequestBox.className = 'num-request error'
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})

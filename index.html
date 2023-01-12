@@ -14,9 +14,10 @@
     <!-- LOCAL LINKS -->
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
-
-
 </head>
+
+
+
 <body>
     <section>
         <div class="container">
@@ -29,18 +30,18 @@
                             <h1 class="display-6 fw-semibold pt-6">Password generator</h1>
 
 
-                            <form id="form" action="/" method="GET"> 
+                            <form id="form" action="/"> 
 
-                                <div class="mb-1 mt-3">
+                                <div class="mt-4 mt--1">
                                     <p>Password length</p>
-                                    <input class="form-control" type="number" placeholder="Enter a number between 10-64" name="num-len-given">
+                                    <input class="form-control" type="number" placeholder="Enter a number between 10-64" name="num-len-given" id="num-len-given">
                                     <div class="text-danger pb-3" id="error_msg_1"></div>
 
                                     <p>Include the following (randomised)</p>
 
                                     <div class="form-group">
                                       <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="capital-letters" name="options[]" >
+                                        <input class="form-check-input" type="checkbox" id="capital-letters" name="options[]">
                                         <label class="form-check-label" for="capital-letters">Capital letters</label>
                                       </div>
 
@@ -72,8 +73,6 @@
 
 
     </section>
-
-    
-    
 </body>
+
 </html>
