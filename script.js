@@ -90,20 +90,19 @@ var specialCharacters = [
 
 
 // FORM CLIENT-SIDE DATA ENTRY VALIDATION -----------------------------------
-
 const form = document.getElementById('form')
 
-// VAR'S RELATED TO "PASSWORD LENGTH"
+// VAR'S RELATED TO "PASSWORD LENGTH" ERRORS
 const numLenGiven = document.getElementById('num-len-given')
 const errorElement1 = document.getElementById('error_msg_1')
 
-// VAR'S RELATED TO "SWITCHES"
+// VAR'S RELATED TO "SWITCHES" ERRORS
 const allSwitches = document.querySelectorAll('.form-group .form-check-input');
 const errorElement2 = document.getElementById('error_msg_2');
 let atLeastOneChecked = false;
 
-
 form.addEventListener('submit', (e) => {
+  e.preventDefault()
   // ERROR CHECKS FOR "PASSWORD LENGTH"
   let logError1 = []
   if (numLenGiven.value === '' || numLenGiven.value == null) {
@@ -117,7 +116,6 @@ form.addEventListener('submit', (e) => {
 }
 
   if (logError1.length > 0) {
-    e.preventDefault()
     errorElement1.innerText = logError1.join(', ')
   } else {
     errorElement1.innerText = '';
@@ -137,12 +135,36 @@ form.addEventListener('submit', (e) => {
   }
 
   if (logError2.length > 0) {
-      e.preventDefault();
       errorElement2.innerText = logError2.join(', ');
   } else {
     atLeastOneChecked = false;
     errorElement2.innerText = '';
   }
-
 })
 // FORM CLIENT-SIDE DATA ENTRY VALIDATION (end) -----------------------------------
+
+
+// GET FORM VALUES -----------------------------------
+var isCapitalLettersOn = document.getElementById('capital-letters')
+var isNumbersOn = document.getElementById('numbers')
+var isSpecialCharOn = document.getElementById('special-char')
+
+
+form.addEventListener('submit', (e) => {
+  console.log(numLenGiven.value);
+
+console.log(isCapitalLettersOn.checked);
+console.log(isNumbersOn.checked);
+console.log(isSpecialCharOn.checked);
+
+
+})
+
+// GET FORM VALUES (end) -----------------------------------
+
+
+
+// TODO:
+// [] Get the len value from the forms to manipulate
+// [] 
+
