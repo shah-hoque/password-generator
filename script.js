@@ -150,6 +150,28 @@ var isNumbersOn = document.getElementById('numbers')
 var isSpecialCharOn = document.getElementById('special-char')
 
 
+
+// GET FORM VALUES (end) -----------------------------------
+
+// CREATE AN ARRAY TO HOLD THE COMPLETED PASSWORD
+var passwordBox = []
+
+function addSpecialChar() {
+  
+  
+  for (let i = 0; i < numLenGiven.value; i++) {
+    const randomIndex = Math.floor(Math.random() * specialCharacters.length);
+    passwordBox.push(randomIndex)
+      
+    }    
+  }
+
+
+
+
+
+
+// this eventListener is not needed and is here just to see results from my coding below
 form.addEventListener('submit', (e) => {
   console.log(numLenGiven.value);
 
@@ -157,10 +179,10 @@ console.log(isCapitalLettersOn.checked);
 console.log(isNumbersOn.checked);
 console.log(isSpecialCharOn.checked);
 
+addSpecialChar()
 
+console.log(passwordBox);
 })
-
-// GET FORM VALUES (end) -----------------------------------
 
 
 
