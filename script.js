@@ -159,6 +159,8 @@ var passwordBox = []
 // instruction board
 var addSpecialCharCut = 2
 var addNumericCharactersCut = 3
+var addLowerCasedCharactersCut = 4
+var addUpperCasedCharactersCut = 5
 // Figure out allotment
 
 
@@ -173,6 +175,20 @@ function addNumericCharacters() {
   for (let i = 0; i < addNumericCharactersCut; i++) {
     const randomIndex = Math.floor(Math.random() * numericCharacters.length);
     passwordBox.push(numericCharacters[randomIndex])
+  }
+}
+
+function addLowerCasedCharacters() {
+  for (let i = 0; i < addLowerCasedCharactersCut; i++) {
+    const randomIndex = Math.floor(Math.random() * lowerCasedCharacters.length);
+    passwordBox.push(lowerCasedCharacters[randomIndex])
+  }
+}
+
+function addUpperCasedCharacters() {
+  for (let i = 0; i < addUpperCasedCharactersCut; i++) {
+    const randomIndex = Math.floor(Math.random() * upperCasedCharacters.length);
+    passwordBox.push(upperCasedCharacters[randomIndex])
   }
 }
 
@@ -191,6 +207,8 @@ console.log(isSpecialCharOn.checked);
 
 addSpecialChar()
 addNumericCharacters()
+addLowerCasedCharacters()
+addUpperCasedCharacters()
 
 console.log(passwordBox);
 })
