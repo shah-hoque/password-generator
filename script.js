@@ -156,15 +156,25 @@ var isSpecialCharOn = document.getElementById('special-char')
 // CREATE AN ARRAY TO HOLD THE COMPLETED PASSWORD
 var passwordBox = []
 
+// instruction board
+var addSpecialCharCut = 2
+var addNumericCharactersCut = 3
+// Figure out allotment
+
+
 function addSpecialChar() {
-  
-  
-  for (let i = 0; i < numLenGiven.value; i++) {
+  for (let i = 0; i < addSpecialCharCut; i++) {
     const randomIndex = Math.floor(Math.random() * specialCharacters.length);
-    passwordBox.push(randomIndex)
-      
-    }    
+    passwordBox.push(specialCharacters[randomIndex])
   }
+}
+
+function addNumericCharacters() {
+  for (let i = 0; i < addNumericCharactersCut; i++) {
+    const randomIndex = Math.floor(Math.random() * numericCharacters.length);
+    passwordBox.push(numericCharacters[randomIndex])
+  }
+}
 
 
 
@@ -180,6 +190,7 @@ console.log(isNumbersOn.checked);
 console.log(isSpecialCharOn.checked);
 
 addSpecialChar()
+addNumericCharacters()
 
 console.log(passwordBox);
 })
