@@ -149,19 +149,46 @@ var isCapitalLettersOn = document.getElementById('capital-letters')
 var isNumbersOn = document.getElementById('numbers')
 var isSpecialCharOn = document.getElementById('special-char')
 
-
-
+var isLowercaseOn = true
 // GET FORM VALUES (end) -----------------------------------
 
 // CREATE AN ARRAY TO HOLD THE COMPLETED PASSWORD
 var passwordBox = []
 
-// instruction board
-var addSpecialCharCut = 2
-var addNumericCharactersCut = 3
-var addLowerCasedCharactersCut = 4
-var addUpperCasedCharactersCut = 5
-// Figure out allotment
+// VARS THAT WILL BE ALLOCATED a # SPLIT FROM THE # DEFINED IN numLenGiven
+var addSpecialCharCut = 0
+var addNumericCharactersCut = 0
+var addLowerCasedCharactersCut = 0
+var addUpperCasedCharactersCut = 0
+
+
+// FUNC THAT SPLITS UP numLenGiven ACROSS THE SWITCHES TURNED ON
+function setCuts() {
+  var count = 0;
+
+  while (count < numLenGiven.value) {
+
+    if (isSpecialCharOn.checked && count != numLenGiven.value) {
+      addSpecialCharCut++;
+      count++;
+    } 
+    if (isNumbersOn.checked && count != numLenGiven.value) {
+      addNumericCharactersCut++;
+      count++;
+    }
+    if (isLowercaseOn === true && count != numLenGiven.value) {
+      addLowerCasedCharactersCut++;
+      count++;
+    }
+    if (isCapitalLettersOn.checked && count != numLenGiven.value) {
+      addUpperCasedCharactersCut++;
+      count++;
+    }
+  }
+}
+
+
+
 
 
 function addSpecialChar() {
@@ -210,7 +237,20 @@ addNumericCharacters()
 addLowerCasedCharacters()
 addUpperCasedCharacters()
 
+setCuts() 
+
 console.log(passwordBox);
+
+console.log("numLenGiven.value " + numLenGiven.value)
+console.log("addSpecialCharCut: " + addSpecialCharCut)
+console.log("addNumericCharactersCut: " + addNumericCharactersCut)
+console.log("addLowerCasedCharactersCut: " + addLowerCasedCharactersCut)
+console.log("addUpperCasedCharactersCut: " + addUpperCasedCharactersCut)
+
+
+
+
+// console.log(isSpecialCharOn.value)
 })
 
 
