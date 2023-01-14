@@ -162,7 +162,7 @@ var addLowerCasedCharactersCut = 0
 var addUpperCasedCharactersCut = 0
 
 
-// FUNC THAT SPLITS UP numLenGiven ACROSS THE SWITCHES TURNED ON
+// FUNC THAT SPLITS UP numLenGiven ACROSS THE SWITCHES TURNED ON -----------------------------------
 function setCuts() {
   var count = 0;
 
@@ -186,11 +186,10 @@ function setCuts() {
     }
   }
 }
+// FUNC THAT SPLITS UP numLenGiven ACROSS THE SWITCHES TURNED ON (end) -----------------------------------
 
 
-
-
-
+// 4 FUNC'S THAT PUSH THE # OF ELEMENTS (FROM ITS SPLIT) TO passwordBox -----------------------------------
 function addSpecialChar() {
   for (let i = 0; i < addSpecialCharCut; i++) {
     const randomIndex = Math.floor(Math.random() * specialCharacters.length);
@@ -218,6 +217,20 @@ function addUpperCasedCharacters() {
     passwordBox.push(upperCasedCharacters[randomIndex])
   }
 }
+// 4 FUNC'S THAT PUSH THE # OF ELEMENTS (FROM ITS SPLIT) TO passwordBox (end) -----------------------------------
+
+// VAR THAT CONTAINS THE LAST RESULT ARRAY
+var passwordBoxMadeRandom = []
+
+
+// FUNC THAT MAKES THE LAST RESULT IN passwordBox RANDOM -----------------------------------
+function passwordBoxMakeRandom() {
+  for (let i = 0; i < passwordBox.length; i++) {
+    const randomIndex = Math.floor(Math.random() * passwordBox.length);
+    passwordBoxMadeRandom.push(passwordBox[randomIndex])
+  }
+}
+// FUNC THAT MAKES THE LAST RESULT IN passwordBox RANDOM (end) -----------------------------------
 
 
 
@@ -232,14 +245,14 @@ console.log(isCapitalLettersOn.checked);
 console.log(isNumbersOn.checked);
 console.log(isSpecialCharOn.checked);
 
+setCuts() 
+
 addSpecialChar()
 addNumericCharacters()
 addLowerCasedCharacters()
 addUpperCasedCharacters()
 
-setCuts() 
-
-console.log(passwordBox);
+passwordBoxMakeRandom()
 
 console.log("numLenGiven.value " + numLenGiven.value)
 console.log("addSpecialCharCut: " + addSpecialCharCut)
@@ -247,15 +260,7 @@ console.log("addNumericCharactersCut: " + addNumericCharactersCut)
 console.log("addLowerCasedCharactersCut: " + addLowerCasedCharactersCut)
 console.log("addUpperCasedCharactersCut: " + addUpperCasedCharactersCut)
 
+console.log(passwordBox);
+console.log(passwordBoxMadeRandom);
 
-
-
-// console.log(isSpecialCharOn.value)
 })
-
-
-
-// TODO:
-// [] Get the len value from the forms to manipulate
-// [] 
-
