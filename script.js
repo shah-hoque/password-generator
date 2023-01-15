@@ -232,8 +232,22 @@ function passwordBoxMakeRandom() {
 }
 // FUNC THAT MAKES THE LAST RESULT IN passwordBox RANDOM (end) -----------------------------------
 
+// FUNC THAT RESETS THE FORM & ALL CHANGING VAR'S -----------------------------------
+function resetSwitchCuts() {
+  document.getElementById('form').reset()
 
+  addSpecialCharCut = 0
+  addNumericCharactersCut = 0
+  addLowerCasedCharactersCut = 0
+  addUpperCasedCharactersCut = 0
 
+  // The below two reassignments are removing the last result. It needs to be removed, then added after the result is shown.
+  passwordBox = []
+  passwordBoxMadeRandom = []
+
+  
+}   
+// FUNC THAT RESETS THE FORM & ALL CHANGING VAR'S (end) -----------------------------------
 
 
 
@@ -253,6 +267,10 @@ addLowerCasedCharacters()
 addUpperCasedCharacters()
 
 passwordBoxMakeRandom()
+
+resetSwitchCuts()
+
+
 
 console.log("numLenGiven.value " + numLenGiven.value)
 console.log("addSpecialCharCut: " + addSpecialCharCut)
