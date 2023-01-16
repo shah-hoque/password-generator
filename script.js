@@ -183,21 +183,25 @@ function resetFormAndCutsAndResult() {
 
 // FUNC THAT ENABLES THE TOAST RESULT DISPLAY
 
-var option = {
-  animation: true,
-  delay: 30000
-};
-
-var option2 = {
-  animation: true,
-  delay: 1
-};
 
 function Toasty() {
+  var option = {
+    animation: true,
+    delay: 30000
+  };
+  
+  var option2 = {
+    animation: true,
+    delay: 1
+  };
+
+
   if (logError1.length <= 0 && logError2.length <= 0) {
     var toastHTMLElement = document.getElementById("client-result");
     var toastElement = new bootstrap.Toast(toastHTMLElement, option);
     toastElement.show();
+    return
+    
 
   } else {
     var toastHTMLElement = document.getElementById("client-result");
@@ -206,6 +210,18 @@ function Toasty() {
   }
     
   } 
+
+  // Copy text
+
+  let copyText = document.querySelector("img")
+  copyText.querySelector("button").addEventListener("click")
+
+  var clipboard = new ClipboardJS('#display-pass');
+    
+  // EVENT LISTENER
+  clipboard.on('success', function(e) {
+    console.log('Text copied to clipboard:', e.text);
+  });
 
   
 
