@@ -2,21 +2,28 @@ body {
     background-color: #f8f9fa;
 }
 
-/* MAIN CARD BODY */
-/* .card-body {
-
-} */
-
-/* LENGTH OF PASSWORD */
-.object-width {
-    width: 20%;
-    min-width: ;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* USER FORM PADDING */
+.card {
+    margin-bottom: 3%;
 }
 
-.form-range {
-    width: 10%;
+/* USER TOAST RESULT DIV */
+.toast {
+  min-width: 80%;
+  margin-top: 10%;
 }
+
+.client-result {
+    margin: auto;
+}
+
+#display-pass {
+    text-align: center;
+}
+
+
+
+
+
+
 
