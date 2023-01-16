@@ -21,9 +21,23 @@ body {
     text-align: center;
 }
 
+/* working */
 
 
 
+    
+
+.toast img {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+
+    width: 20px;
+    margin-right: 2%;
+    margin-bottom: 2%;
+
+
+}
 
 
 

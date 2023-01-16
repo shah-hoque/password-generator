@@ -18,7 +18,7 @@ let atLeastOneChecked = false;
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   // ERROR CHECKS FOR "PASSWORD LENGTH"
-  let logError1 = []
+   logError1 = [] // Global var
   if (numLenGiven.value === '' || numLenGiven.value == null) {
     logError1.push('Please enter a number')
     
@@ -36,7 +36,7 @@ form.addEventListener('submit', (e) => {
   }
   
   // ERROR CHECKS FOR "SWITCHES"
-  let logError2 = []
+   logError2 = [] // Global var
   
   allSwitches.forEach(input => {
     if (input.checked) {
@@ -148,11 +148,13 @@ function passwordBoxMakeRandom() {
 
 
 function displayResult() {
-  // const myNewString = passwordBoxMadeRandom.join(',');
-
   resultDisplay.innerText = passwordBoxMadeRandom.join('');
+  }
 
-}
+
+
+
+
 
 
 
@@ -176,6 +178,54 @@ function resetFormAndCutsAndResult() {
   
 }   
 // FUNC THAT RESETS THE FORM & ALL CHANGING VAR'S (end) -----------------------------------
+
+
+
+// FUNC THAT ENABLES THE TOAST RESULT DISPLAY
+
+var option = {
+  animation: true,
+  delay: 30000
+};
+
+var option2 = {
+  animation: true,
+  delay: 1
+};
+
+function Toasty() {
+  if (logError1.length <= 0 && logError2.length <= 0) {
+    var toastHTMLElement = document.getElementById("client-result");
+    var toastElement = new bootstrap.Toast(toastHTMLElement, option);
+    toastElement.show();
+
+  } else {
+    var toastHTMLElement = document.getElementById("client-result");
+    var toastElement = new bootstrap.Toast(toastHTMLElement, option2);
+    toastElement.show();
+  }
+    
+  } 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
