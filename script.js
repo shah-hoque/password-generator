@@ -200,8 +200,11 @@ const copyButton = document.querySelector(".copy-link-button");
 copyButton.addEventListener("click", async () => {
   await navigator.clipboard.writeText(textToCopy);
   console.log("Text was copied to the clipboard.");
-  
+
   resultDisplay.innerText = "Copied";
+  setTimeout(() => {
+    document.querySelector('.btn-close').click();
+  }, 2000);
 });
 // EVENT THAT COPIES THE GENERATED PASSWORD TO THE CLIPBOARD (end) -----------------------------------
 
