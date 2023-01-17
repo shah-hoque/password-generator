@@ -1,8 +1,3 @@
-
-const resultDisplay = document.getElementById('display-pass')
-
-
-
 // FORM CLIENT-SIDE DATA ENTRY VALIDATION -----------------------------------
 const form = document.getElementById('form')
 
@@ -66,7 +61,7 @@ var isSpecialCharOn = document.getElementById('special-char')
 var isLowercaseOn = true
 // GET FORM VALUES (end) -----------------------------------
 
-// CREATE AN ARRAY TO HOLD THE COMPLETED PASSWORD
+// CREATE THE 1ST ARRAY TO HOLD THE COMPLETED PASSWORD
 var passwordBox = []
 
 // VARS THAT WILL BE ALLOCATED a # SPLIT FROM THE # DEFINED IN numLenGiven
@@ -133,8 +128,10 @@ function addUpperCasedCharacters() {
 }
 // 4 FUNC'S THAT PUSH THE # OF ELEMENTS (FROM ITS SPLIT) TO passwordBox (end) -----------------------------------
 
-// VAR THAT CONTAINS THE LAST RESULT ARRAY
-var passwordBoxMadeRandom = []
+
+// VAR THAT CONTAINS THE 2ND RESULT ARRAY
+ var passwordBoxMadeRandom = []
+ const resultDisplay = document.getElementById('display-pass')
 
 
 // FUNC THAT MAKES THE LAST RESULT IN passwordBox RANDOM -----------------------------------
@@ -147,17 +144,12 @@ function passwordBoxMakeRandom() {
 // FUNC THAT MAKES THE LAST RESULT IN passwordBox RANDOM (end) -----------------------------------
 
 
+// FUNC THAT SHOWS THE GENERATED PASSWORD IN THE TOAST DIV VIA INNER HTML -----------------------------------
 function displayResult() {
   resultDisplay.innerText = passwordBoxMadeRandom.join('');
+  textToCopy = passwordBoxMadeRandom.join('')
   }
-
-
-
-
-
-
-
-
+// FUNC THAT SHOWS THE GENERATED PASSWORD IN THE TOAST DIV VIA INNER HTML (end) -----------------------------------
 
 
 // FUNC THAT RESETS THE FORM & ALL CHANGING VAR'S -----------------------------------
@@ -169,21 +161,13 @@ function resetFormAndCutsAndResult() {
   addLowerCasedCharactersCut = 0
   addUpperCasedCharactersCut = 0
   
-  // The below two reassignments are removing the last result. It needs to be removed, then added after the result is shown.
-  
-  // add the popup, show the password, then add the 2 vars below
   passwordBox = []
   passwordBoxMadeRandom = []
-  
-  
 }   
 // FUNC THAT RESETS THE FORM & ALL CHANGING VAR'S (end) -----------------------------------
 
 
-
-// FUNC THAT ENABLES THE TOAST RESULT DISPLAY
-
-
+// FUNC THAT ENABLES THE TOAST RESULT DISPLAY -----------------------------------
 function Toasty() {
   var option = {
     animation: true,
@@ -195,52 +179,31 @@ function Toasty() {
     delay: 1
   };
 
-
   if (logError1.length <= 0 && logError2.length <= 0) {
     var toastHTMLElement = document.getElementById("client-result");
     var toastElement = new bootstrap.Toast(toastHTMLElement, option);
     toastElement.show();
     return
-    
-
   } else {
     var toastHTMLElement = document.getElementById("client-result");
     var toastElement = new bootstrap.Toast(toastHTMLElement, option2);
     toastElement.show();
-  }
-    
+    }
   } 
+// FUNC THAT ENABLES THE TOAST RESULT DISPLAY (end) -----------------------------------
 
-  // Copy text
 
-  let copyText = document.querySelector("img")
-  copyText.querySelector("button").addEventListener("click")
+// EVENT THAT COPIES THE GENERATED PASSWORD TO THE CLIPBOARD -----------------------------------
+let textToCopy = passwordBoxMadeRandom.join('')
+const copyButton = document.querySelector(".copy-link-button");
 
-  var clipboard = new ClipboardJS('#display-pass');
-    
-  // EVENT LISTENER
-  clipboard.on('success', function(e) {
-    console.log('Text copied to clipboard:', e.text);
-  });
-
+copyButton.addEventListener("click", async () => {
+  await navigator.clipboard.writeText(textToCopy);
+  console.log("Text was copied to the clipboard.");
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  resultDisplay.innerText = "Copied";
+});
+// EVENT THAT COPIES THE GENERATED PASSWORD TO THE CLIPBOARD (end) -----------------------------------
 
 
 
@@ -279,6 +242,9 @@ form.addEventListener('submit', (e) => {
   console.log(passwordBox);
   console.log(passwordBoxMadeRandom);
   
+  console.log("result: " + textToCopy)
+
+
 })
 
 
