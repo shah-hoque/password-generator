@@ -129,25 +129,25 @@ function addUpperCasedCharacters() {
 // 4 FUNC'S THAT PUSH THE # OF ELEMENTS (FROM ITS SPLIT) TO passwordBox (end) -----------------------------------
 
 
-// VAR THAT CONTAINS THE 2ND RESULT ARRAY
- var passwordBoxMadeRandom = []
- const resultDisplay = document.getElementById('display-pass')
-
-
-// FUNC THAT MAKES THE LAST RESULT IN passwordBox RANDOM -----------------------------------
+// FUNC THAT RANDOMISES THE ELEMENTS IN passwordBox -----------------------------------
 function passwordBoxMakeRandom() {
-  for (let i = 0; i < passwordBox.length; i++) {
-    const randomIndex = Math.floor(Math.random() * passwordBox.length);
-    passwordBoxMadeRandom.push(passwordBox[randomIndex])
+  console.log("PasswordBox before randomisation: " + passwordBox)
+  for (let i = passwordBox.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [passwordBox[i], passwordBox[j]] = [passwordBox[j], passwordBox[i]];
   }
 }
-// FUNC THAT MAKES THE LAST RESULT IN passwordBox RANDOM (end) -----------------------------------
+// FUNC THAT RANDOMISES THE ELEMENTS IN passwordBox (end) -----------------------------------
+
+
+// GET HTML ID THAT WILL ACCEPT THE RESULT BACK 
+const resultDisplay = document.getElementById('display-pass')
 
 
 // FUNC THAT SHOWS THE GENERATED PASSWORD IN THE TOAST DIV VIA INNER HTML -----------------------------------
 function displayResult() {
-  resultDisplay.innerText = passwordBoxMadeRandom.join('');
-  textToCopy = passwordBoxMadeRandom.join('')
+  resultDisplay.innerText = passwordBox.join('');
+  textToCopy = passwordBox.join('')
   }
 // FUNC THAT SHOWS THE GENERATED PASSWORD IN THE TOAST DIV VIA INNER HTML (end) -----------------------------------
 
@@ -194,7 +194,7 @@ function Toasty() {
 
 
 // EVENT THAT COPIES THE GENERATED PASSWORD TO THE CLIPBOARD -----------------------------------
-let textToCopy = passwordBoxMadeRandom.join('')
+let textToCopy = passwordBox.join('')
 const copyButton = document.querySelector(".copy-link-button");
 
 copyButton.addEventListener("click", async () => {
@@ -221,7 +221,7 @@ form.addEventListener('submit', (e) => {
   passwordBoxMakeRandom()
   displayResult()
   Toasty()
-  // resetFormAndCutsAndResult()
+  // resetFormAndCutsAndResult() // to view console.log's below, you'll need to turn this off
 })
 // SECOND EVENT THAT TRIGGERS ALL THE FORMULAS FOR THIS PROGRAMME (end) -----------------------------------
 
@@ -244,8 +244,7 @@ form.addEventListener('submit', (e) => {
 
   console.log("\n");
 
-  console.log("Result array from split allocation: " + passwordBox);
-  console.log("Result array from last randomisation: " + passwordBoxMadeRandom);
+  console.log("PasswordBox randomised: " + passwordBox);
 
   console.log("\n");
   

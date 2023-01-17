@@ -39,10 +39,9 @@ How to take the generated password:
 
 ## Application deployed
 
-![image of the password generator before the results are shown](/assets/screenshot1.png)
-![image of the password generator after the results are shown](/assets/screenshot2.png)
-![image of the password generator running on the iPhone 12 Pro](/assets/iphone-screenshot.png)
+![image of the password generator with the results shown & copied](/assets/2%20screenshots.png)
 
+For demonstrative purposes the user input is shown in the mockups, however, in the deployed application the user inputs are reset after the submit button is clicked.
 
 ## Credits
 Author: Shohidul Shah Hoque
