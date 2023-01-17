@@ -209,53 +209,55 @@ copyButton.addEventListener("click", async () => {
 // EVENT THAT COPIES THE GENERATED PASSWORD TO THE CLIPBOARD (end) -----------------------------------
 
 
-
-
-// this eventListener is not needed and is here just to see results from my coding below
+// SECOND EVENT THAT TRIGGERS ALL THE FORMULAS FOR THIS PROGRAMME -----------------------------------
 form.addEventListener('submit', (e) => {
-  console.log(numLenGiven.value);
-  
-  console.log(isCapitalLettersOn.checked);
-  console.log(isNumbersOn.checked);
-  console.log(isSpecialCharOn.checked);
   
   setCuts() 
-  
   addSpecialChar()
   addNumericCharacters()
   addLowerCasedCharacters()
   addUpperCasedCharacters()
-  
+
   passwordBoxMakeRandom()
-  
-  
   displayResult()
-  
   Toasty()
-  
   resetFormAndCutsAndResult()
-  
-  
-  console.log("numLenGiven.value " + numLenGiven.value)
-  console.log("addSpecialCharCut: " + addSpecialCharCut)
-  console.log("addNumericCharactersCut: " + addNumericCharactersCut)
-  console.log("addLowerCasedCharactersCut: " + addLowerCasedCharactersCut)
-  console.log("addUpperCasedCharactersCut: " + addUpperCasedCharactersCut)
-  
-  console.log(passwordBox);
-  console.log(passwordBoxMadeRandom);
+})
+// SECOND EVENT THAT TRIGGERS ALL THE FORMULAS FOR THIS PROGRAMME (end) -----------------------------------
+
+
+// CONSOLE LOG OF KEY STEPS -----------------------------------
+form.addEventListener('submit', (e) => {
+
+  console.log("Password len inputted: " + numLenGiven.value);
+  console.log("Requested capital letters? " + isCapitalLettersOn.checked);
+  console.log("Requested numbers? " + isNumbersOn.checked);
+  console.log("Requested special char?" + isSpecialCharOn.checked);
+
+  console.log("\n");
+
+  console.log("Password will be allocated the following split:" )
+  console.log("Capital letters: " + addUpperCasedCharactersCut)
+  console.log("Special char: " + addSpecialCharCut)
+  console.log("Numbers: " + addNumericCharactersCut)
+  console.log("Lower-case letters: " + addLowerCasedCharactersCut)
+
+  console.log("\n");
+
+  console.log("Result array from split allocations: " + passwordBox);
+  console.log("Result array from last randomisation: " + passwordBoxMadeRandom);
+
+  console.log("\n");
   
   console.log("result: " + textToCopy)
-
-
 })
+// CONSOLE LOG OF KEY STEPS (end) -----------------------------------
 
 
+// PROGRAMME'S DATA SOURCE -----------------------------------
 
-
-
-// Array of special characters to be included in password
-var specialCharacters = [
+  // Array of special characters to be included in password
+  var specialCharacters = [
     '@',
     '%',
     '+',
@@ -279,7 +281,7 @@ var specialCharacters = [
     '-',
     '_',
     '.'
-  ];
+    ];
   
   // Array of numeric characters to be included in password
   var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -343,3 +345,4 @@ var specialCharacters = [
     'Y',
     'Z'
   ];
+  // PROGRAMME'S DATA SOURCE (end) -----------------------------------
