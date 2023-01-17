@@ -221,7 +221,7 @@ form.addEventListener('submit', (e) => {
   passwordBoxMakeRandom()
   displayResult()
   Toasty()
-  resetFormAndCutsAndResult()
+  // resetFormAndCutsAndResult()
 })
 // SECOND EVENT THAT TRIGGERS ALL THE FORMULAS FOR THIS PROGRAMME (end) -----------------------------------
 
@@ -232,11 +232,11 @@ form.addEventListener('submit', (e) => {
   console.log("Password len inputted: " + numLenGiven.value);
   console.log("Requested capital letters? " + isCapitalLettersOn.checked);
   console.log("Requested numbers? " + isNumbersOn.checked);
-  console.log("Requested special char?" + isSpecialCharOn.checked);
+  console.log("Requested special char? " + isSpecialCharOn.checked);
 
   console.log("\n");
 
-  console.log("Password will be allocated the following split:" )
+  console.log("Password allocated char split:" )
   console.log("Capital letters: " + addUpperCasedCharactersCut)
   console.log("Special char: " + addSpecialCharCut)
   console.log("Numbers: " + addNumericCharactersCut)
@@ -244,12 +244,12 @@ form.addEventListener('submit', (e) => {
 
   console.log("\n");
 
-  console.log("Result array from split allocations: " + passwordBox);
+  console.log("Result array from split allocation: " + passwordBox);
   console.log("Result array from last randomisation: " + passwordBoxMadeRandom);
 
   console.log("\n");
   
-  console.log("result: " + textToCopy)
+  console.log("Password copied? " + textToCopy)
 })
 // CONSOLE LOG OF KEY STEPS (end) -----------------------------------
 
