@@ -221,7 +221,7 @@ form.addEventListener('submit', (e) => {
   passwordBoxMakeRandom()
   displayResult()
   Toasty()
-  // resetFormAndCutsAndResult() // to view console.log's below, you'll need to turn this off
+  resetFormAndCutsAndResult() // to view console.log's below, you'll need to turn this off
 })
 // SECOND EVENT THAT TRIGGERS ALL THE FORMULAS FOR THIS PROGRAMME (end) -----------------------------------
 
