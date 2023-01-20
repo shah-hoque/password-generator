@@ -61,7 +61,7 @@ var isSpecialCharOn = document.getElementById('special-char')
 var isLowercaseOn = true
 // GET FORM VALUES (end) -----------------------------------
 
-// CREATE THE 1ST ARRAY TO HOLD THE COMPLETED PASSWORD
+// ARRAY THAT WILL HOLD THE COMPLETED PASSWORD
 var passwordBox = []
 
 // VARS THAT WILL BE ALLOCATED a # SPLIT FROM THE # DEFINED IN numLenGiven
@@ -170,26 +170,23 @@ function resetFormAndCutsAndResult() {
 // FUNC THAT ENABLES THE TOAST RESULT DISPLAY -----------------------------------
 function Toasty() {
   var option = {
-    animation: true,
-    delay: 30000
-  };
-  
-  var option2 = {
-    animation: true,
-    delay: 1
-  };
+  animation: true,
+  delay: 30000,
+}
 
-  if (logError1.length <= 0 && logError2.length <= 0) {
-    var toastHTMLElement = document.getElementById("client-result");
-    var toastElement = new bootstrap.Toast(toastHTMLElement, option);
-    toastElement.show();
-    return
-  } else {
-    var toastHTMLElement = document.getElementById("client-result");
-    var toastElement = new bootstrap.Toast(toastHTMLElement, option2);
-    toastElement.show();
-    }
-  } 
+
+if (logError1.length <= 0 && logError2.length <= 0) {
+  var toastHTMLElement = document.getElementById("client-result");
+  var toastElement = new bootstrap.Toast(toastHTMLElement, option);
+  toastElement.show();
+  
+} else {
+  document.getElementsByClassName("toast").style.display = "none";
+}
+
+}
+
+
 // FUNC THAT ENABLES THE TOAST RESULT DISPLAY (end) -----------------------------------
 
 
