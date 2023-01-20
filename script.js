@@ -174,19 +174,18 @@ function Toasty() {
   delay: 30000,
 }
 
-
 if (logError1.length <= 0 && logError2.length <= 0) {
   var toastHTMLElement = document.getElementById("client-result");
   var toastElement = new bootstrap.Toast(toastHTMLElement, option);
   toastElement.show();
-  
+
+  document.querySelector(".toast").removeAttribute("style")
+
 } else {
-  document.getElementsByClassName("toast").style.display = "none";
-}
+  document.querySelector(".toast").style.display = "none";
+  }
 
 }
-
-
 // FUNC THAT ENABLES THE TOAST RESULT DISPLAY (end) -----------------------------------
 
 
