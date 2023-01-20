@@ -4,7 +4,7 @@ Last updated on: 17th Jan 2023. Last updated by: Shohidul Shah Hoque
 __________
 
 ## Description
-This application is deployed on the following link
+This application is deployed on the following link:
 - https://shah-hoque.github.io/password-generator/
 
 This application creates a password based on the following user input options:
@@ -12,6 +12,7 @@ This application creates a password based on the following user input options:
 - The option to include capital letters
 - The option to include numbers
 - The option to include special characters
+- Lower-case letters are included by default
 
 The benefits of this application:
 - Users can create complicated passwords at ease with the desired length and character types
@@ -35,7 +36,7 @@ Required inputs from the user:
 
 How to take the generated password:
 - The user can either manually highlight and copy the result 
-- The user can click on the icon on the bottom right that will automatically copy the result to their clipboard
+- The user can click on the icon on the bottom right corner that will automatically copy the result to their clipboard
 
 ## Application deployed
 
